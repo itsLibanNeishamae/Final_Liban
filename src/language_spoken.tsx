@@ -31,9 +31,11 @@ const { languageInEnglish, alpha2Codes } = languageCodes;
   } 
 }
 
- const getResponse = (language: string, listOfPlaces: string | any[] | undefined) => {
-  return `${capitalize(language)} is spoken in ${listOfPlaces.length} countries around the world`
-}
+const getResponse = (language: string, listOfPlaces: string[] | undefined) => {
+  const countryCount = listOfPlaces?.length ?? 0;
+
+  return `${capitalize(language)} is spoken in ${countryCount} countries around the world`;
+};
 
 export{
   capitalize,
